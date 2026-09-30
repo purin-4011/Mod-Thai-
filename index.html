@@ -1,0 +1,343 @@
+<!doctype html>
+<html lang="th">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<meta name="description" content="มอดแปลภาษาไทยสำหรับเกม ทำโดยแฟน ๆ">
+<title>คลังมอดภาษาไทย</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Mitr:wght@400;500;600&family=IBM+Plex+Sans+Thai:wght@400;500;600&family=Silkscreen&display=swap">
+<style>
+/* Layout: night-street arcade shelf. A neon hero with the game's own Thai sign, then a shelf of mod "cartridges", then the full guide for each released mod. Single dark look by choice, like the games' night scenes. */
+:root {
+  --night: #12142a;
+  --night-2: #1b1e3a;
+  --night-3: #262a4d;
+  --ink: #e9e6f5;
+  --muted: #a6a3c4;
+  --neon-pink: #ff7ac8;
+  --neon-cyan: #6fe6f0;
+  --amber: #f3cf6b;
+  --line: #34385e;
+  --ok: #7ee3a2;
+  --font-display: "Mitr", "Noto Sans Thai", Tahoma, sans-serif;
+  --font-body: "IBM Plex Sans Thai", "Noto Sans Thai", Tahoma, sans-serif;
+  --font-pixel: "Silkscreen", ui-monospace, monospace;
+  color-scheme: dark;
+}
+* { box-sizing: border-box; }
+body { margin: 0; }
+[hidden] { display: none !important; }
+body {
+  background: var(--night);
+  color: var(--ink);
+  font-family: var(--font-body);
+  font-size: 16px;
+  line-height: 1.75;
+  -webkit-font-smoothing: antialiased;
+}
+a { color: var(--neon-cyan); }
+img.px { image-rendering: pixelated; display: block; width: 100%; height: auto; }
+.wrap { max-width: 1080px; margin: 0 auto; padding-inline: 20px; }
+h1, h2, h3 { font-family: var(--font-display); font-weight: 500; line-height: 1.3; text-wrap: balance; margin: 0; }
+p { margin: 0; }
+.eyebrow { font-family: var(--font-pixel); font-size: 12px; letter-spacing: .12em; color: var(--neon-pink); text-transform: uppercase; }
+
+/* top bar */
+.bar { border-bottom: 1px solid var(--line); }
+.bar .wrap { display: flex; align-items: center; justify-content: space-between; gap: 16px; padding-block: 14px; flex-wrap: wrap; }
+.logo { font-family: var(--font-display); font-weight: 600; font-size: 20px; color: var(--ink); text-decoration: none; display: flex; align-items: center; gap: 10px; }
+.logo i { width: 12px; height: 12px; background: var(--neon-pink); box-shadow: 0 0 10px var(--neon-pink); display: inline-block; }
+.bar nav { display: flex; gap: 18px; font-size: 15px; }
+.bar nav a { color: var(--muted); text-decoration: none; }
+.bar nav a:hover, .bar nav a:focus-visible { color: var(--ink); }
+
+/* hero */
+.hero { padding-block: 56px 48px; }
+.hero .wrap { display: grid; grid-template-columns: 1.05fr 1fr; gap: 40px; align-items: center; }
+.hero h1 { font-size: clamp(34px, 5.4vw, 58px); font-weight: 600; margin-top: 10px; }
+.hero h1 span { color: var(--neon-pink); text-shadow: 0 0 18px rgba(255,122,200,.55); }
+.hero .lead { color: var(--muted); font-size: 18px; margin-top: 18px; max-width: 34em; }
+.hero .shot { border: 4px solid var(--night-3); background: #000; position: relative; }
+.hero .shot figcaption { position: absolute; left: 10px; bottom: 10px; background: rgba(18,20,42,.85); font-size: 13px; padding: 4px 10px; color: var(--ink); }
+.counts { display: flex; gap: 28px; margin-top: 28px; flex-wrap: wrap; }
+.counts div { display: flex; flex-direction: column; }
+.counts b { font-family: var(--font-pixel); font-weight: 400; font-size: 26px; color: var(--amber); font-variant-numeric: tabular-nums; line-height: 1.2; }
+.counts small { color: var(--muted); font-size: 13px; }
+
+/* shelf */
+section.block { padding-block: 48px; border-top: 1px solid var(--line); }
+.block > .wrap > h2 { font-size: 28px; margin-top: 6px; }
+.block > .wrap > .sub { color: var(--muted); margin-top: 6px; }
+.shelf { display: grid; grid-template-columns: repeat(3, minmax(0, 1fr)); gap: 20px; margin-top: 28px; }
+.cart { background: var(--night-2); border: 1px solid var(--line); display: flex; flex-direction: column; min-width: 0; }
+.cart .cover { aspect-ratio: 16 / 9; background: var(--night-3); position: relative; overflow: hidden; max-width: 100%; }
+.cart .cover img { width: 100%; height: 100%; object-fit: cover; image-rendering: pixelated; }
+.cart .cover .ph { position: absolute; inset: 0; display: grid; place-items: center; font-family: var(--font-pixel); color: var(--line); font-size: 44px; letter-spacing: .1em;
+  background: repeating-linear-gradient(0deg, var(--night-3) 0 3px, var(--night-2) 3px 6px); }
+.cart .body { padding: 18px 18px 20px; display: flex; flex-direction: column; gap: 8px; flex: 1; }
+.cart h3 { font-size: 20px; }
+.cart .engine { font-size: 13px; color: var(--muted); }
+.cart .desc { font-size: 15px; color: var(--muted); }
+.cart .foot { margin-top: auto; padding-top: 10px; display: flex; gap: 10px; align-items: center; flex-wrap: wrap; }
+.pill { font-size: 13px; padding: 2px 10px; border: 1px solid currentColor; display: inline-flex; align-items: center; gap: 6px; line-height: 1.6; }
+.pill::before { content: ""; width: 7px; height: 7px; background: currentColor; }
+.pill.ready { color: var(--ok); }
+.pill.wip { color: var(--amber); }
+.pill.plan { color: var(--muted); }
+.btn { font-family: var(--font-display); font-size: 15px; text-decoration: none; padding: 8px 16px; border: 2px solid var(--neon-cyan); color: var(--neon-cyan); background: transparent; cursor: pointer; display: inline-flex; align-items: center; gap: 8px; }
+.btn:hover, .btn:focus-visible { background: var(--neon-cyan); color: var(--night); outline: none; }
+.btn.solid { background: var(--neon-pink); border-color: var(--neon-pink); color: var(--night); }
+.btn.solid:hover, .btn.solid:focus-visible { background: var(--ink); border-color: var(--ink); }
+.btn[aria-disabled="true"] { border-color: var(--line); color: var(--muted); background: transparent; cursor: default; }
+
+/* mod detail */
+.detail-head { display: grid; grid-template-columns: minmax(0, 1fr) auto; gap: 24px; align-items: end; }
+.detail-head .meta { color: var(--muted); font-size: 15px; margin-top: 8px; }
+.dl { display: flex; flex-direction: column; align-items: flex-end; gap: 6px; }
+.dl small { color: var(--muted); font-size: 13px; }
+.gallery { display: grid; grid-template-columns: repeat(3, minmax(0, 1fr)); gap: 12px; margin-top: 28px; }
+.gallery figure { margin: 0; background: #000; border: 1px solid var(--line); }
+.gallery figcaption { font-size: 13px; color: var(--muted); padding: 6px 10px; background: var(--night-2); }
+
+.cols { display: grid; grid-template-columns: minmax(0, 1.4fr) minmax(0, 1fr); gap: 40px; margin-top: 40px; }
+.cols h3 { font-size: 21px; margin-bottom: 14px; }
+.steps { list-style: none; margin: 0; padding: 0; display: flex; flex-direction: column; gap: 16px; counter-reset: s; }
+.steps li { display: grid; grid-template-columns: 34px minmax(0, 1fr); gap: 12px; counter-increment: s; }
+.steps li::before { content: counter(s); font-family: var(--font-pixel); color: var(--night); background: var(--amber); width: 30px; height: 30px; display: grid; place-items: center; font-size: 14px; margin-top: 2px; }
+.steps b { font-weight: 600; }
+code { font-family: ui-monospace, "SFMono-Regular", Menlo, Consolas, monospace; font-size: .86em; background: var(--night-3); padding: 1px 6px; color: var(--ink); overflow-wrap: anywhere; }
+.files { width: 100%; border-collapse: collapse; font-size: 14px; margin-top: 4px; }
+.files th, .files td { text-align: left; padding: 8px 10px; border-bottom: 1px solid var(--line); vertical-align: top; }
+.files th { color: var(--muted); font-weight: 500; font-size: 13px; }
+.tablebox { overflow-x: auto; }
+.note { border-left: 3px solid var(--neon-pink); background: var(--night-2); padding: 12px 16px; font-size: 15px; margin-top: 18px; }
+.side { display: flex; flex-direction: column; gap: 28px; }
+.side ul { margin: 0; padding-left: 20px; display: flex; flex-direction: column; gap: 6px; font-size: 15px; }
+.side ul li::marker { color: var(--neon-pink); }
+details { border-top: 1px solid var(--line); }
+details:last-of-type { border-bottom: 1px solid var(--line); }
+summary { cursor: pointer; padding: 12px 0; font-family: var(--font-display); font-size: 16px; list-style: none; display: flex; justify-content: space-between; gap: 12px; }
+summary::after { content: "+"; font-family: var(--font-pixel); color: var(--neon-cyan); }
+details[open] summary::after { content: "–"; }
+summary:focus-visible { outline: 2px solid var(--neon-cyan); outline-offset: 2px; }
+details .in { padding-bottom: 14px; color: var(--muted); font-size: 15px; display: flex; flex-direction: column; gap: 6px; }
+
+footer { border-top: 1px solid var(--line); padding-block: 28px 40px; color: var(--muted); font-size: 14px; }
+footer .wrap { display: flex; flex-direction: column; gap: 6px; }
+
+@media (max-width: 860px) {
+  .hero .wrap, .cols { grid-template-columns: 1fr; }
+  .shelf { grid-template-columns: 1fr; }
+  .gallery { grid-template-columns: repeat(2, minmax(0, 1fr)); }
+  .detail-head { grid-template-columns: 1fr; }
+  .dl { align-items: flex-start; }
+}
+@media (max-width: 480px) {
+  .gallery { grid-template-columns: 1fr; }
+  .bar nav { gap: 14px; font-size: 14px; }
+}
+@media (prefers-reduced-motion: no-preference) {
+  .hero h1 span { animation: flicker 6s infinite; }
+  @keyframes flicker { 0%, 92%, 100% { opacity: 1; } 93% { opacity: .55; } 95% { opacity: 1; } 96% { opacity: .7; } }
+}
+</style>
+</head>
+<body>
+
+
+<header class="bar">
+  <div class="wrap">
+    <a class="logo" href="#top"><i></i>คลังมอดภาษาไทย</a>
+    <nav>
+      <a href="#mods">มอดทั้งหมด</a>
+      <a href="#darkside">Darkside Detective</a>
+      <a href="#install">วิธีลง</a>
+    </nav>
+  </div>
+</header>
+
+<main id="top">
+  <section class="hero">
+    <div class="wrap">
+      <div>
+        <div class="eyebrow">Thai fan translations</div>
+        <h1>เล่นเกมที่ชอบเป็น<span>ภาษาไทย</span></h1>
+        <p class="lead">มอดแปลไทยทำโดยแฟน ๆ เราแปลทั้งบทพูด เมนู ไอเทม และวาดป้ายในฉากใหม่เป็นภาษาไทย เลือกใช้ฟอนต์พิกเซลที่เข้ากับเกม และแก้สระกับวรรณยุกต์ไม่ให้ลอยหรือซ้อนกัน</p>
+        <div class="counts">
+          <div><b>1</b><small>มอดที่พร้อมเล่น</small></div>
+          <div><b>8,400+</b><small>บรรทัดที่แปลแล้ว</small></div>
+          <div><b>78</b><small>ภาพที่วาดเป็นไทย</small></div>
+        </div>
+      </div>
+      <figure class="shot" style="margin:0">
+        <img class="px" src="img/motel.png" alt="ฉากโมเทลในเกม The Darkside Detective ป้ายไฟนีออนเขียนว่า ห้องว่าง" width="800" height="540">
+        <figcaption>The Darkside Detective · ป้ายไฟ "ห้องว่าง"</figcaption>
+      </figure>
+    </div>
+  </section>
+
+  <section class="block" id="mods">
+    <div class="wrap">
+      <div class="eyebrow">Mod shelf</div>
+      <h2>มอดทั้งหมด</h2>
+      <p class="sub">เกมที่แปลเสร็จแล้วพร้อมให้โหลด และเกมที่กำลังทำต่อ</p>
+      <div class="shelf">
+        <article class="cart">
+          <div class="cover"><img src="img/museum.png" alt="หน้าพิพิธภัณฑ์ในเกม The Darkside Detective ป้ายภาษาไทย"></div>
+          <div class="body">
+            <h3>The Darkside Detective</h3>
+            <div class="engine">Season 1 · 9 คดี · Unity</div>
+            <p class="desc">แปลบทพูด ชื่อไอเทม เมนู ชื่อคดี ป้าย และจอปริศนาครบทุกคดี</p>
+            <div class="foot">
+              <span class="pill ready">พร้อมเล่น v1.0</span>
+              <a class="btn" href="#darkside">รายละเอียด</a>
+            </div>
+          </div>
+        </article>
+        <article class="cart">
+          <div class="cover"><div class="ph">1914</div></div>
+          <div class="body">
+            <h3>Valiant Hearts: The Great War</h3>
+            <div class="engine">UbiArt Framework</div>
+            <p class="desc">เกมผจญภัยเล่าเรื่องสงครามโลกครั้งที่ 1 ตอนนี้กำลังสำรวจไฟล์และระบบฟอนต์ของเกม</p>
+            <div class="foot"><span class="pill wip">กำลังทำ</span></div>
+          </div>
+        </article>
+        <article class="cart">
+          <div class="cover"><div class="ph">D6</div></div>
+          <div class="body">
+            <h3>Astrea: Six-Sided Oracles</h3>
+            <div class="engine">เกมสร้างสำรับลูกเต๋า</div>
+            <p class="desc">อยู่ในรายการที่จะทำต่อไป</p>
+            <div class="foot"><span class="pill plan">วางแผนไว้</span></div>
+          </div>
+        </article>
+      </div>
+    </div>
+  </section>
+
+  <section class="block" id="darkside">
+    <div class="wrap">
+      <div class="detail-head">
+        <div>
+          <div class="eyebrow">Released</div>
+          <h2 style="font-size:34px;margin-top:6px">The Darkside Detective ภาษาไทย</h2>
+          <p class="meta">Season 1 ครบ 9 คดี · ทดสอบกับเวอร์ชัน Epic Games Store (Unity 2019.4.18f1)</p>
+        </div>
+        <div class="dl">
+          <a class="btn solid" id="dl-darkside" href="#" target="_blank" rel="noopener">ดาวน์โหลดมอด</a>
+          <small id="dl-note">ไฟล์ zip มี 3 ไฟล์ พร้อมคู่มือ</small>
+        </div>
+      </div>
+
+      <div class="gallery">
+        <figure><img class="px" src="img/camp.png" alt="ป้ายไม้เขียนว่า แคมป์ไซต์" width="568" height="384"><figcaption>หนองน้ำ · แคมป์ไซต์</figcaption></figure>
+        <figure><img class="px" src="img/reception.png" alt="ป้ายต้อนรับในสถานีตำรวจ" width="568" height="384"><figcaption>สถานีตำรวจ · ต้อนรับ</figcaption></figure>
+        <figure><img class="px" src="img/library.png" alt="ป้ายเงียบในห้องสมุด" width="568" height="384"><figcaption>ห้องสมุด · เงียบ</figcaption></figure>
+        <figure><img class="px" src="img/museum.png" alt="ป้ายพิพิธภัณฑ์" width="568" height="384"><figcaption>สุสาน · พิพิธภัณฑ์</figcaption></figure>
+        <figure><img class="px" src="img/mall.png" alt="ป้ายห้างทวินเลกส์ ประดับไฟคริสต์มาส" width="676" height="456"><figcaption>คดีคริสต์มาส · ห้างทวินเลกส์</figcaption></figure>
+        <figure><img class="px" src="img/motel.png" alt="ป้ายโมเทลไฟนีออน ห้องว่าง" width="800" height="540"><figcaption>ริมทาง · โมเทล</figcaption></figure>
+      </div>
+
+      <div class="cols" id="install">
+        <div>
+          <h3>วิธีลงมอด</h3>
+          <ol class="steps">
+            <li><div><b>ปิดเกม แล้วเปิดโฟลเดอร์เกม</b><br>
+              Epic: Library → <code>...</code> ที่เกม → Manage → กดไอคอนโฟลเดอร์<br>
+              Steam: คลิกขวาที่เกม → Manage → Browse local files</div></li>
+            <li><div><b>สำรองไฟล์เดิม 3 ไฟล์</b> คัดลอกไปเก็บไว้ที่อื่น หรือเปลี่ยนชื่อโดยเติม <code>.bak</code> ต่อท้าย</div></li>
+            <li><div><b>แตกไฟล์ zip แล้ววางทับ</b> ตามตารางด้านล่าง ถ้า Windows ถาม ให้เลือก Replace the files in the destination</div></li>
+            <li><div><b>เปิดเกม แล้วเลือกภาษา</b> ไปที่ Options → Language แล้วเลือก <b>ไทย</b> (อยู่ในช่องที่เดิมเป็น 中文)</div></li>
+          </ol>
+          <div class="tablebox" style="margin-top:22px">
+            <table class="files">
+              <thead><tr><th>ไฟล์ในมอด</th><th>วางไว้ที่</th></tr></thead>
+              <tbody>
+                <tr><td><code>resources.assets</code></td><td><code>thedarksidedetective_Data\</code></td></tr>
+                <tr><td><code>sharedassets0.assets</code></td><td><code>thedarksidedetective_Data\</code></td></tr>
+                <tr><td><code>SpookyDoorway.DarksideShared.dll</code></td><td><code>thedarksidedetective_Data\Managed\</code></td></tr>
+              </tbody>
+            </table>
+          </div>
+          <p class="note">ไฟล์ <code>.dll</code> ต้องอยู่ในโฟลเดอร์ <code>Managed</code> ไม่ใช่โฟลเดอร์เดียวกับอีกสองไฟล์</p>
+        </div>
+
+        <div class="side">
+          <div>
+            <h3>แปลอะไรไปบ้าง</h3>
+            <ul>
+              <li>บทพูดครบ 9 คดี ประมาณ 8,400 บรรทัด</li>
+              <li>ชื่อไอเทม จุดสำรวจในฉาก และเมนูทั้งหมด</li>
+              <li>ภาพชื่อคดี ปุ่ม จอปริศนา ป้าย และหนังสือพิมพ์ 78 ภาพ</li>
+              <li>ฟอนต์พิกเซล Silver ที่เติมอักษรไทยให้เข้ากับเกม</li>
+              <li>ชื่อร้าน ชื่อเฉพาะ และปกบางอันยังคงเป็นภาษาอังกฤษ</li>
+            </ul>
+          </div>
+          <div>
+            <h3>ถาม-ตอบ</h3>
+            <details>
+              <summary>จะถอดมอดออกยังไง</summary>
+              <div class="in">
+                <p>เอาไฟล์ที่สำรองไว้กลับไปวางทับ หรือกด Verify ให้ Launcher โหลดไฟล์เดิมคืน</p>
+                <p>Epic: Library → ... → Manage → Verify<br>Steam: Properties → Installed Files → Verify integrity of game files</p>
+              </div>
+            </details>
+            <details>
+              <summary>เปิดเกมแล้วเด้ง หรือจอดำ</summary>
+              <div class="in"><p>เวอร์ชันเกมอาจไม่ตรงกับมอด มอดทดสอบกับเวอร์ชัน Epic ส่วน Steam และ GOG ยังไม่ได้ทดสอบ ให้คืนไฟล์เดิมก่อน</p></div>
+            </details>
+            <details>
+              <summary>ไม่มีภาษาไทยในเมนู</summary>
+              <div class="in"><p>ตรวจว่าวาง <code>resources.assets</code> ในโฟลเดอร์ <code>thedarksidedetective_Data</code> และทับไฟล์เดิมแล้ว</p></div>
+            </details>
+            <details>
+              <summary>สระลอย หรือตัวอักษรเป็นสี่เหลี่ยม</summary>
+              <div class="in"><p>ยังไม่ได้วาง <code>sharedassets0.assets</code> ทับ ไฟล์นี้เก็บฟอนต์ของบทพูด</p></div>
+            </details>
+            <details>
+              <summary>หน้าเริ่มเกมยังมีตัวจีน</summary>
+              <div class="in"><p>ยังไม่ได้วางไฟล์ <code>.dll</code> ในโฟลเดอร์ <code>Managed</code></p></div>
+            </details>
+            <details>
+              <summary>อัปเดตเกมแล้วมอดหาย</summary>
+              <div class="in"><p>Launcher อาจเขียนไฟล์ทับ ให้ลงมอดใหม่ ถ้าลงแล้วยังเด้ง แปลว่าเกมเปลี่ยนเวอร์ชัน ต้องรอมอดอัปเดต</p></div>
+            </details>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+</main>
+
+<footer>
+  <div class="wrap">
+    <p>มอดทั้งหมดในหน้านี้ทำโดยแฟน ไม่ใช่ของทางการ ต้องมีเกมแท้จึงจะใช้ได้ ลิขสิทธิ์เกมเป็นของผู้พัฒนาและผู้จัดจำหน่ายแต่ละเกม</p>
+    <p>The Darkside Detective © Spooky Doorway · ฟอนต์ <a href="https://poppyworks.itch.io/silver" target="_blank" rel="noopener">Silver</a> โดย Poppy Works</p>
+  </div>
+</footer>
+
+<script>
+// ใส่ลิงก์ดาวน์โหลดตรงนี้ (เช่น Google Drive / MEGA) ถ้าเว้นว่าง ปุ่มจะขึ้นว่ายังไม่เปิดให้โหลด
+const DOWNLOADS = {
+  darkside: ""
+};
+(function () {
+  const a = document.getElementById("dl-darkside");
+  const note = document.getElementById("dl-note");
+  if (DOWNLOADS.darkside) {
+    a.href = DOWNLOADS.darkside;
+  } else {
+    a.removeAttribute("href");
+    a.setAttribute("aria-disabled", "true");
+    a.classList.remove("solid");
+    a.textContent = "ลิงก์ดาวน์โหลดเร็ว ๆ นี้";
+    note.textContent = "ระหว่างนี้ติดต่อผู้ทำมอดเพื่อขอไฟล์";
+  }
+})();
+</script>
+
+</body>
+</html>
